@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>Busqueda de artistas con LastFM</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/lastfm.css">
@@ -9,18 +10,20 @@
 <body>
 	<div class="container" id="container">
 		<header>
+			<div class="page-header">
+				<h1>Carga de artistas <small>Carga la información de tu artista</small></h1>
+			</div>
 			<nav class="navbar">
 				<div class="container-fluid">
 					<div class="navbar-header">
-				      <a class="navbar-brand" href="#">BUSCA<span class="text-danger">TU</span>ARTISTA</a>
+				      <a class="navbar-brand" href="#">Busca <span class="text-danger glyphicon glyphicon-user">TU</span> Artista</a>
 				    </div>
 
-
-					<form class="navbar-form navbar-right" role="search">
+					<form action="#" class="navbar-form navbar-right" role="search">
 						<div class="input-group">
-							<input type="text" class="form-control" id="artistInput" placeholder="Busca tu artista" autofocus required value="eminem" />
+							<input type="text" class="form-control input-lg" id="artistInput" placeholder="Busca tu artista" autofocus required />
 							<span class="input-group-btn">
-								<button class="btn btn-danger" id="boton"><span class="glyphicon glyphicon-search"></span></button>
+								<button class="btn btn-primary btn-lg" id="boton"><span class="glyphicon glyphicon-search"></span></button>
 							</span>
 						</div>
 					</form>
@@ -29,10 +32,9 @@
 		</header>
 
 		<section>
-			<article class="row" id="container1"></article>
+			<article id="container1"></article>
 			<article class="row" id="container2">
-				<div class="col-lg-6X" id="discos"></div>
-				<div class="col-lg-6X" id="tracks"></div>
+				<div class="col-lg-12" id="discos"></div>
 			</article>
 		</section>
 	</div>
