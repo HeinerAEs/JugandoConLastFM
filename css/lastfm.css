@@ -1,0 +1,27 @@
+body {
+	box-shadow: 0px 0px 10px rgba(150, 150, 150, 0.5);
+	margin: 0.5em auto;
+	width: 1024px;
+}
+
+.btn-danger {
+	border-color: #B031EE;
+	background: #B031EE;
+}
+
+.btn-danger:hover:hover {
+	border-color: #9211cf;
+	background: #9211cf;
+}
+.input-group {
+	width: 100%;
+}
+.navbar-brand, .text-danger {
+	font-weight: 700;
+}
+.navbar-form {
+	width: 60%;
+}
+.text-danger {
+	color: #9211cf;
+}
