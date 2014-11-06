@@ -10,7 +10,7 @@ var $discos = $('#discos');
 $artistInput.on('keyup', onKEYUP);
 $button.on('click', onSUBMIT);
 
-//AJAX
+/*AJAX*/
 function getArtistInfo (name, callback) 
 {
 	$.ajax({
@@ -65,11 +65,11 @@ function getAlbumTracks (artist, album, callback)
 	.done(callback);
 }
 
-//Template
+
+/*Template Functions*/
 function artistInfoTemplate (artist) 
 {
 	var html = '';
-	console.log(artist);
 	html += '<div class="row">';
 	html += 	'<div class="col-sm-6">';
 	html += 		'<h2 class="bg-danger">' +artist.name+ '</h2>';
@@ -80,7 +80,8 @@ function artistInfoTemplate (artist)
 					};
 	html += 		'</p>';
 	html += 		'<div class="col-sm-12 text-right">';
-	html +=				'<button class="btn btn-info" id="getAlbums">Discos</button> <button class="btn btn-info" id="getSimilarArtist">Artistas Similares</button>';
+	html +=				'<a class="btn btn-info" id="getAlbums">Discos</a> ';
+	html +=				'<a class="btn btn-info" id="getSimilarArtist">Artistas Similares</a>';
 	html +=			'</div>';
 	html += 	'</div>';
 	html += 	'<div class="col-sm-6 text-center">';
@@ -130,7 +131,7 @@ function artistListSimilars (artist)
 	var similarLength = artist.similarartists.artist.length;
 
 	html += '<div class="row">';
-	html += '<h3 class="bg-warning"><span class="label label-default foco">' +similarLength+ '</span> artistas <span class="label label-warning">Similares</span></h3>';
+	html += '</a><h3 class="bg-warning"><span class="label label-default">' +similarLength+ '</span> artistas <span class="label label-warning">Similares</span></h3>';
 
 	for (var i = 0; i < artist.similarartists.artist.length; i++) {
 		html += '<div class="col-xs-6 col-sm-3">';
@@ -187,7 +188,6 @@ function albumTrackTemplate (track)
 
 	return html;
 }
-
 function fillArtistInfo (jsonData) 
 {
 	if(jsonData.error)
@@ -199,13 +199,13 @@ function fillArtistInfo (jsonData)
 
 	$('#getAlbums').on('click', function(){
 		getArtistAlbums(jsonData.artist.name, fillArtistAlbums);
+		$('#foco').focus();
 	});
 
 	$('#getSimilarArtist').on('click', function(){
 		getSimilarArtist(jsonData.artist.name, fillArtistSimilars);
 	})
 }
-
 function fillArtistAlbums (jsonData) 
 {
 	if(jsonData.error)
@@ -233,7 +233,7 @@ function fillArtistSimilars (jsonData)
 	$('.similarArtists').on('click', function() {
 		var artist = $(this).data('artist');
 		getArtistInfo(artist, fillArtistInfo);
-		$('.foco').focus();
+		$resultOut1.html( '<p class="loading">cargando...</p>' );
 		$discos.html('');
 	});
 }
@@ -246,7 +246,6 @@ function fillAlbumTracks (jsonData)
 	var html = albumTracksTemplate(jsonData.album);
 	$discos.html(html);
 }
-
 function onKEYUP(evt) 
 {
 	if(evt.keyCode == 13) // Enter
@@ -254,7 +253,6 @@ function onKEYUP(evt)
 		onSUBMIT();
 	};
 }
-
 function onSUBMIT() 
 {
 	getArtistInfo($artistInput.val(), fillArtistInfo);
@@ -262,10 +260,7 @@ function onSUBMIT()
 	$resultOut1.html( '<p class="loading">cargando...</p>' );
 
 }
-
 function onERROR () 
 {
 	$resultOut1.html('<p class="loading">ERROR...</p>');
 }
-
-
