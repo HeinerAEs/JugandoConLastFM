@@ -1,0 +1,93 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+figcaption {
+	font-size: 0.9em;
+	font-weight: 600;
+}
+figure {
+	cursor: pointer;
+}
+h1 {
+	margin: 0;
+}
+
+h1, h2, h3 {
+	padding: 0.3em;
+}
+h3 {
+	color: #FFF;
+}
+header {
+	margin-top: -3.5em;
+}
+section {
+	margin-top: -1em;
+}
+
+#container {
+	box-shadow: 0px 0px 10px rgba(150, 150, 150, 0.5);
+	margin: 0.5em auto;
+	padding: 1.5em 0.5em 1em 4em;
+	max-width: 1024px;
+}
+.album img, .similarArtists img, #container1 .row {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#container1 .row {
+	margin-left: -3em;
+	margin-right: 10px;
+}
+.album:hover img, .similarArtists:hover img {
+	border: 5px double #CCC;
+	opacity: 0.6;
+}
+.bg-warning {
+	background: #B031EE;
+}
+
+.btn-danger:hover:hover {
+	border-color: #9211cf;
+	background: #9211cf;
+}
+.btn-info {
+	width: 48%;
+}
+
+.img-responsive {
+	margin-top: 1em;
+	width: 80%;
+}
+.img-similars {
+	width: 200px;
+	height: 150px;
+}
+.input-group {
+	width: 100%;
+}
+.navbar-brand {
+	border-radius: 2em;
+	box-shadow:  1px 1px 1px 1px rgba(180, 180, 180, 0.75);
+}
+.navbar-brand, .text-danger {
+	font-weight: 700;
+}
+.navbar-form {
+	width: 60%;
+}
+.page-header {
+	background: #F7F7F7;
+	margin: 3em 1em 2em -2em;
+}
+.tags, .tags:hover {
+	color: #FFF;
+}
+.text-danger {
+	color: #9211cf;
+}

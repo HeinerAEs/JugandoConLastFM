@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Busqueda de artistas con LastFM</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/lastfm.css">
+</head>
+<body>
+	<div class="container" id="container">
+		<header>
+			<div class="page-header">
+				<h1>Carga de artistas <small>Carga la información de tu artista</small></h1>
+			</div>
+			<nav class="navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+				      <a class="navbar-brand" href="#">Busca <span class="text-danger glyphicon glyphicon-user">TU</span> Artista</a>
+				    </div>
+
+					<form action="#" class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control input-lg" id="artistInput" placeholder="Busca tu artista" autofocus required />
+							<span class="input-group-btn">
+								<button class="btn btn-primary btn-lg" id="boton"><span class="glyphicon glyphicon-search"></span></button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</nav>
+		</header>
+
+		<section>
+			<article id="container1"></article>
+			<article class="row" id="container2">
+				<div class="col-lg-12" id="discos"></div>
+			</article>
+		</section>
+	</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+	<script type="text/javascript" src="js/lastfm.js"></script>
+</body>
+</html>
